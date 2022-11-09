@@ -41,11 +41,30 @@ class Swing
         // (x-axis, y-axis, width, height)
         b.setBounds(130, 100, 100, 40);
 
+		JButton b1 = new JButton("ADD");
+		b1.setBounds(150, 150, 100, 40);
+		f.add(b1);
+
+		 // ------------------ LABEL -----------------
+
+		JLabel num1 = new JLabel("Number 1");
+		num1.setBounds(40, 40, 76, 36);
+		f.add(num1);
+
+		JLabel num2 = new JLabel("Number 2");
+		num2.setBounds(200, 40, 76, 36);
+		f.add(num2);
+
         // ------------------ TEXT FRAME -----------------
-        final JTextField tf = new JTextField();
+        final JTextField tf1 = new JTextField();
 
         // (x-axis, y-axis, width, height)
-        tf.setBounds(50, 50, 150, 20);
+        tf1.setBounds(20, 80, 150, 20);
+
+		final JTextField tf2 = new JTextField();
+
+        // (x-axis, y-axis, width, height)
+        tf2.setBounds(200, 80, 50, 20);
 
         // ------------------- ACTION LISTNER -------------
         b.addActionListener(new ActionListener()
@@ -53,14 +72,23 @@ class Swing
             int count = 0;
             public void actionPerformed(ActionEvent e)
             {
-                tf.setText("The count now is : " + count++);
+                tf1.setText("" + count++);
             }
         });
+
+		b1.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				//tf2.setText("" + (2 + (tf1.getText()).parseInt));
+			}
+		});	
 
         // adding the button to frame
         f.add(b);
         // adding the text field to frame
-        f.add(tf);
+        f.add(tf1);
+		 f.add(tf2);
 
         // (width, height)
         f.setSize(400, 500);
